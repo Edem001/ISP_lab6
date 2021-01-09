@@ -80,11 +80,12 @@
             </tr>
             @foreach (var b in ViewBag.Groups)
             {
-                <tr>
-                    <td><p>@b.ID</p></td>
-                    <td><p>@b.Name</p></td>
-                    <td><p>@b.Number</p></td>
-                </tr>
+        <tr>
+            <td><p>@b.ID</p></td>
+            <td><p>@b.Name</p></td>
+            <td><p>@b.Number</p></td>
+            <td><p><a href="/Home/Enroll/@b.ID">Вступити сюди</a></p></td>
+        </tr>
             }
         </table>
     </div>

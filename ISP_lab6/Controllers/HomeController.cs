@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DB_lab4;
+using ISP_lab6.Models;
 
 namespace ISP_lab6.Controllers
 {
@@ -34,6 +35,29 @@ namespace ISP_lab6.Controllers
             ViewBag.Union = union;
 
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult Enroll(int id)
+        {
+            ViewBag.GroupID = id;
+            return View();
+        }
+        [HttpPost]
+        public string Enroll(Student_extended student_e)
+        {
+            Students student = new Students
+            {
+                Name = student_e.Name,
+                Surname = student_e.Surname,
+                Age = student_e.Age,
+                Group = db.Group.Find(student_e.GroupID)
+            };
+            
+            db.Student.Add(student);
+            db.SaveChanges();
+
+            return student.Name + ", Вас зараховано";
         }
     }
 }
