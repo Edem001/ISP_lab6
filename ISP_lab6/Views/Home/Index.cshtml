@@ -5,16 +5,16 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Книжковий магазин</title>
+    <title>Атамуратов Михайлюк</title>
 </head>
 <body>
     <div>
-        <h3>Распродажа книг</h3>
+        <h3>Institutes</h3>
         <table>
             <tr>
-                <td><p>Назва книги</p></td>
-                <td><p>Автор</p></td>
-                <td><p>Ціна</p></td>
+                <td><p>ID</p></td>
+                <td><p>Name</p></td>
+                <td><p>Location</p></td>
                 <td></td>
             </tr>
             @foreach (var b in ViewBag.Institutes)
@@ -23,6 +23,130 @@
                     <td><p>@b.ID</p></td>
                     <td><p>@b.Name</p></td>
                     <td><p>@b.Location</p></td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div>
+        <h3>Departments</h3>
+        <table>
+            <tr>
+                <td><p>ID</p></td>
+                <td><p>Name</p></td>
+                <td><p>Institute name</p></td>
+                <td></td>
+            </tr>
+            @foreach (var b in ViewBag.Departments)
+            {
+                <tr>
+                    <td><p>@b.ID</p></td>
+                    <td><p>@b.Name</p></td>
+                    <td><p>@b.Institute.Name</p></td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div>
+        <h3>Lecturers</h3>
+        <table>
+            <tr>
+                <td><p>ID</p></td>
+                <td><p>Name</p></td>
+                <td><p>Surname</p></td>
+                <td><p>Father's name</p></td>
+                <td><p>Department</p></td>
+                <td></td>
+            </tr>
+            @foreach (var b in ViewBag.Lecturers)
+            {
+                <tr>
+                    <td><p>@b.ID</p></td>
+                    <td><p>@b.Name</p></td>
+                    <td><p>@b.Surname</p></td>
+                    <td><p>@b.FathersName</p></td>
+                    <td><p>@b.Department.Name</p></td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div>
+        <h3>Groups</h3>
+        <table>
+            <tr>
+                <td><p>ID</p></td>
+                <td><p>Name</p></td>
+                <td><p>Numeric</p></td>
+                <td></td>
+            </tr>
+            @foreach (var b in ViewBag.Groups)
+            {
+                <tr>
+                    <td><p>@b.ID</p></td>
+                    <td><p>@b.Name</p></td>
+                    <td><p>@b.Number</p></td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div>
+        <h3>Students</h3>
+        <table>
+            <tr>
+                <td><p>ID</p></td>
+                <td><p>Name</p></td>
+                <td><p>Surname</p></td>
+                <td><p>Age</p></td>
+                <td><p>Group</p></td>
+                <td></td>
+            </tr>
+            @foreach (var b in ViewBag.Students)
+            {
+                <tr>
+                    <td><p>@b.ID</p></td>
+                    <td><p>@b.Name</p></td>
+                    <td><p>@b.Surname</p></td>
+                    <td><p>@b.Age</p></td>
+                    <td><p>@b.Group.Name</p></td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div>
+        <h3>Subjects</h3>
+        <table>
+            <tr>
+                <td><p>ID</p></td>
+                <td><p>Name</p></td>
+                <td><p>Credits</p></td>
+                <td></td>
+            </tr>
+            @foreach (var b in ViewBag.Subjects)
+            {
+                <tr>
+                    <td><p>@b.ID</p></td>
+                    <td><p>@b.Name</p></td>
+                    <td><p>@b.Credits</p></td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div>
+        <h3>Union</h3>
+        <table>
+            <tr>
+                <td><p>ID</p></td>
+                <td><p>Subject</p></td>
+                <td><p>Group</p></td>
+                <td><p>Lecturer</p></td>
+                <td></td>
+            </tr>
+            @foreach (var b in ViewBag.Union)
+            {
+                <tr>
+                    <td><p>@b.ID</p></td>
+                    <td><p>@b.Subject.Name</p></td>
+                    <td><p>@b.Group.Name</p></td>
+                    <td><p>@b.Lecturer.Surname</p></td>
                 </tr>
             }
         </table>
